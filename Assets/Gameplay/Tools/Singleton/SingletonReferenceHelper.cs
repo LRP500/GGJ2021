@@ -9,8 +9,5 @@ namespace Tools
     {
         [SerializeField]
         private EventManager _eventManager = null;
-
-        [SerializeField]
-        private NavigationManager _navigationManager = null;
     }
 }
