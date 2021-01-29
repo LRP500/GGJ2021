@@ -115,7 +115,7 @@ CharacterController:
   serializedVersion: 2
   m_Height: 2
   m_Radius: 0.2
-  m_SlopeLimit: 0
+  m_SlopeLimit: 70
   m_StepOffset: 0.3
   m_SkinWidth: 0.01
   m_MinMoveDistance: 0.001
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _controller: {fileID: 7656992061013577912}
-  _speed: 2
+  _speed: 8
   _gravity: 9.81
   _jumpForce: 4
   _playerBody: {fileID: 391797257}
