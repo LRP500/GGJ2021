@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace GGJ2021
 {
@@ -9,7 +10,11 @@ namespace GGJ2021
         private CharacterController _controller;
 
         [SerializeField]
-        private float _speed = 2f;
+        [FormerlySerializedAs("_speed")]
+        private float _walkSpeed = 2f;
+
+        [SerializeField]
+        private float _runSpeed = 5f;
 
         [SerializeField]
         private float _gravity = 9.81f;
@@ -38,7 +43,8 @@ namespace GGJ2021
             bool jumpInput = Input.GetKeyDown(KeyCode.Space);
 
             // Calculate horizontal movement
-            Vector3 move = (_playerBody.right * axisX + _playerBody.forward * axisY) * _speed;
+            float speed = Input.GetKey(KeyCode.LeftShift) ? _runSpeed : _walkSpeed;
+            Vector3 move = (_playerBody.right * axisX + _playerBody.forward * axisY) * speed;
 
             // Apply jump to vertical speed if grounded
             if (_controller.isGrounded)
