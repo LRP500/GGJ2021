@@ -8,6 +8,28 @@ namespace GGJ2021
         [SerializeField]
         private NavMeshAgent _agent;
 
+        [SerializeField]
+        private Animator _animator;
+
+        public bool IsMoving { get; private set; }
+
+        private void Update()
+        {
+            bool moving = _agent.velocity.magnitude <= 0.1f;
+
+            // Update animator parameter on state changed
+            if (!IsMoving && moving)
+            {
+                _animator.SetBool("Moving", true);
+            }
+            else if (!moving && IsMoving)
+            {
+                _animator.SetBool("Moving", false);
+            }
+
+            IsMoving = moving;
+        }
+
         public override void Move(Vector3 move, float speed)
         {
             _agent.speed = speed;

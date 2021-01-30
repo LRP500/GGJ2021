@@ -18,12 +18,11 @@ namespace GGJ2021
         [SerializeField]
         private AIPatrolPath _path;
 
-        public override void Initialize(AIStateMachine character) { }
+        public override void EnterState(AIStateMachine character) { }
+        public override void ExitState(AIStateMachine character) { }
 
         protected override void RunBehaviour(AIStateMachine character)
         {
-            Debug.Log($"Follow Patrol");
-
             AIMotor motor = character.Motor;
 
             if (character.Motor.HasReachedDestination())
