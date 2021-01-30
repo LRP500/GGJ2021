@@ -45,7 +45,7 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 0
-  m_Acceleration: 0
+  m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 1
@@ -240,7 +240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _motor: {fileID: 8799254035035961778}
   _sensor: {fileID: 8799254035035961779}
-  _initialState: {fileID: 11400000, guid: 5ce4071d7f0038c4294f77079eb6dfb4, type: 2}
+  _initialState: {fileID: 11400000, guid: da2074ad5c515414aa46a909051c0822, type: 2}
   _currentState: {fileID: 0}
   _previousState: {fileID: 0}
   _autoStart: 1

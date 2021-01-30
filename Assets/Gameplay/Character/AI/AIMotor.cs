@@ -13,5 +13,16 @@ namespace GGJ2021
             _agent.speed = speed;
             _agent.Move(move.normalized * Time.deltaTime);
         }
+
+        public void SetDestination(Vector3 destination, float speed)
+        {
+            _agent.speed = speed;
+            _agent.SetDestination(destination);
+        }
+
+        public bool HasReachedDestination()
+        {
+            return !_agent.hasPath && _agent.remainingDistance <= _agent.stoppingDistance;
+        }
     }
 }
