@@ -19,14 +19,6 @@ namespace GGJ2021
             _runtimeReference.SetValue(this);
         }
 
-        private void Update()
-        {
-            if (PlayerInput.Interact)
-            {
-                _mainCamera.Value.GetComponent<Interactor>().TryInteract();
-            }
-        }
-
         public void Freeze()
         {
             _body.SetActive(false);

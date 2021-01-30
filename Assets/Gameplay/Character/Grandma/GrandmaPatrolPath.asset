@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 743e0fa56289c7a49a75c275ccbef355, type: 3}
   m_Name: GrandmaPatrolPath
   m_EditorClassIdentifier: 
-  _waypoints: []
+  _waypoints:
+  - {fileID: 0}
