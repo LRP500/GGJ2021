@@ -47,7 +47,7 @@ namespace GGJ2021
             Vector3 move = (horizontal + vertical) * speed;
 
             // Apply jump to vertical speed if grounded
-            if (_controller.isGrounded)
+            if (_controller.isGrounded && !PlayerInput.Crouch)
             {
                 if (PlayerInput.Jump)
                 {
