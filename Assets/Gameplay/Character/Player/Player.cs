@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace GGJ2021
 {
-    public class Player : MonoBehaviour
+    public class Player : Character
     {
         [SerializeField]
         private PlayerVariable _runtimeReference;
