@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3351232}
   - component: {fileID: 2352830}
   - component: {fileID: 2539773562777798713}
+  - component: {fileID: 9124425673359141162}
   m_Layer: 0
   m_Name: ScaryTree
   m_TagString: Untagged
@@ -96,3 +97,30 @@ CapsuleCollider:
   m_Height: 5.7171717
   m_Direction: 1
   m_Center: {x: 0, y: 2.857428, z: 0}
+--- !u!205 &9124425673359141162
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160606}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: -0.46175385, y: 2.857428, z: -0.06608534}
+  m_Size: 5.7171717
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.1937969
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 2352830}
+  - screenRelativeHeight: 0.048382718
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 2352830}
+  - screenRelativeHeight: 0.0067374827
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 2352830}
+  m_Enabled: 1

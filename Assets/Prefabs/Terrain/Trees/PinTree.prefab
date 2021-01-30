@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3397388}
   - component: {fileID: 2353144}
   - component: {fileID: 8610459699679939421}
+  - component: {fileID: -5606141148733414810}
   m_Layer: 0
   m_Name: PinTree
   m_TagString: Untagged
@@ -96,3 +97,30 @@ CapsuleCollider:
   m_Height: 12.711982
   m_Direction: 1
   m_Center: {x: -0.068825245, y: 6.301741, z: -0.08823365}
+--- !u!205 &-5606141148733414810
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142018}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: -0.068825245, y: 6.301741, z: -0.08823371}
+  m_Size: 12.711982
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.1937969
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 2353144}
+  - screenRelativeHeight: 0.048382718
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 2353144}
+  - screenRelativeHeight: 0.0067374827
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 2353144}
+  m_Enabled: 1
