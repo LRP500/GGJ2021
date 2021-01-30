@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e997e3e091807394096a6e8ca765e2bc, type: 3}
-  m_Name: IdleState
+  m_Name: Children_IdleState
   m_EditorClassIdentifier: 
-  _endCondition: {fileID: 11400000, guid: 449d54e0d820e1b43bc24e13a6d65f74, type: 2}
+  _endCondition: {fileID: 11400000, guid: 0129e51c5ede3264f9741ee662c30d07, type: 2}
   _trueState: {fileID: 11400000, guid: 5ce4071d7f0038c4294f77079eb6dfb4, type: 2}
   _falseState: {fileID: 11400000}

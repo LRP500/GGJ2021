@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73e406b898f90a84baba9c357dc59a2e, type: 3}
-  m_Name: GrandmaNearPlayer
+  m_Script: {fileID: 11500000, guid: 743e0fa56289c7a49a75c275ccbef355, type: 3}
+  m_Name: Grandma_PatrolPath
   m_EditorClassIdentifier: 
-  _target: {fileID: 11400000, guid: 5b3bffd4de932d449b0e6b08d1b9dae5, type: 2}
-  _maxDistance: 15
+  _waypoints:
+  - {fileID: 0}

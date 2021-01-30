@@ -70,8 +70,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _body: {fileID: 5714492464220181506}
-  _walkSpeed: 1
-  _runSpeed: 2
+  _walkSpeed: 3.5
+  _runSpeed: 3.5
   _gravity: 9.81
   _agent: {fileID: 7871873622079480503}
 --- !u!114 &8799254035035961779
@@ -241,7 +241,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _motor: {fileID: 8799254035035961778}
   _sensor: {fileID: 8799254035035961779}
-  _initialState: {fileID: 11400000, guid: 5ce4071d7f0038c4294f77079eb6dfb4, type: 2}
+  _initialState: {fileID: 11400000, guid: a1ac069aae718da4fbce021acd575213, type: 2}
   _currentState: {fileID: 0}
   _previousState: {fileID: 0}
   _autoStart: 1

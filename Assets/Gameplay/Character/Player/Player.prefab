@@ -135,10 +135,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _body: {fileID: 391797257}
   _walkSpeed: 4
-  _runSpeed: 8
+  _runSpeed: 6
   _gravity: 9.81
   _crouchSpeed: 2
-  _jumpForce: 4
+  _jumpForce: 2
   _controller: {fileID: 7656992061013577912}
 --- !u!114 &1649478241711435001
 MonoBehaviour:
