@@ -9,23 +9,15 @@ namespace GGJ2021
         [SerializeField]
         private TransformVariable _target;
 
-        [SerializeField]
-        private float _maxDistance = 10f;
+        public override void Initialize(AIStateMachine character) { }
 
-        public override void Initialize(AIStateMachine character)
+        protected override void RunBehaviour(AIStateMachine character)
         {
-        }
-
-        public override void Execute(AIStateMachine character)
-        {
-            Vector3 aiPos = character.Motor.transform.position;
+            AIMotor motor = character.Motor;
+            Vector3 aiPos = motor.transform.position;
             Vector3 targetPos = _target.Value.position;
-
-            if (Vector3.Distance(aiPos, targetPos) <= _maxDistance)
-            {
-                Vector3 direction = targetPos - aiPos;
-                character.Motor.Move(direction, character.Motor.WalkSpeed);
-            }
+            Vector3 direction = targetPos - aiPos;
+            character.Motor.Move(direction, motor.WalkSpeed);
         }
     }
 }

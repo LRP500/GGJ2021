@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39aacea25cc9d0440ab25303de65eab2, type: 3}
-  m_Name: FollowPlayer
+  m_Script: {fileID: 11500000, guid: e997e3e091807394096a6e8ca765e2bc, type: 3}
+  m_Name: Idle
   m_EditorClassIdentifier: 
   _endCondition: {fileID: 11400000, guid: 449d54e0d820e1b43bc24e13a6d65f74, type: 2}
-  _trueState: {fileID: 11400000}
-  _falseState: {fileID: 11400000, guid: a1ac069aae718da4fbce021acd575213, type: 2}
-  _target: {fileID: 11400000, guid: 5b3bffd4de932d449b0e6b08d1b9dae5, type: 2}
+  _trueState: {fileID: 11400000, guid: 5ce4071d7f0038c4294f77079eb6dfb4, type: 2}
+  _falseState: {fileID: 11400000}

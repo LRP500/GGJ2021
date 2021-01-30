@@ -11,7 +11,7 @@ namespace GGJ2021
         public override void Move(Vector3 move, float speed)
         {
             _agent.speed = speed;
-            _agent.Move(move * Time.deltaTime);
+            _agent.Move(move.normalized * Time.deltaTime);
         }
     }
 }
