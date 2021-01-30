@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Children_NearPlayer
   m_EditorClassIdentifier: 
   _target: {fileID: 11400000, guid: 5b3bffd4de932d449b0e6b08d1b9dae5, type: 2}
-  _maxDistance: 3
+  _maxDistance: 5

@@ -14,7 +14,8 @@ namespace GGJ2021
         [SerializeField]
         private AIState _falseState;
 
-        public abstract void Initialize(AIStateMachine character);
+        public abstract void EnterState(AIStateMachine character);
+        public abstract void ExitState(AIStateMachine character);
 
         protected abstract void RunBehaviour(AIStateMachine character);
         

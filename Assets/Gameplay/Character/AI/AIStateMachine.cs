@@ -9,10 +9,10 @@ namespace GGJ2021
         private AIMotor _motor;
 
         [SerializeField]
-        private AISensor _sensor;
+        private Animator _animator;
 
         public AIMotor Motor => _motor;
-        public AISensor Sensor => _sensor;
+        public Animator Animator => _animator;
 
         /// <summary>
         /// Starting state.
@@ -55,7 +55,14 @@ namespace GGJ2021
         {
             _previousState = _currentState;
             _currentState = state;
-            StartCoroutine(state.Execute(this));
+
+            if (_currentState != _previousState)
+            {
+                _previousState?.ExitState(this);
+                _currentState.EnterState(this);
+            }
+
+            StartCoroutine(_currentState.Execute(this));
         }
     }
 }

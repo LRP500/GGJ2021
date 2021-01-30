@@ -9,15 +9,19 @@ namespace GGJ2021
         [SerializeField]
         private TransformVariable _target;
 
-        public override void Initialize(AIStateMachine character) { }
+        public override void EnterState(AIStateMachine character)
+        {
+            character.GetComponent<Character>().SetFollowing(true);
+        }
+
+        public override void ExitState(AIStateMachine character)
+        {
+            character.GetComponent<Character>().SetFollowing(false);
+        }
 
         protected override void RunBehaviour(AIStateMachine character)
         {
-            Vector3 aiPos = character.transform.position;
-            Vector3 targetPos = _target.Value.position;
-            //Vector3 direction = targetPos - aiPos;
-            character.Motor.SetDestination(targetPos, character.Motor.WalkSpeed);
-            //character.Motor.Move(direction, character.Motor.WalkSpeed);
+            character.Motor.SetDestination(_target.Value.position, character.Motor.WalkSpeed);
         }
     }
 }
