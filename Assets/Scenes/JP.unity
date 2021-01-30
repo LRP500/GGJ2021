@@ -195,6 +195,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Child
       objectReference: {fileID: 0}
+    - target: {fileID: 8799254036097470208, guid: cd5b821f7f71ffb43b06a2f1cefe95b0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8799254036097470209, guid: cd5b821f7f71ffb43b06a2f1cefe95b0, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -356,7 +360,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 882589207}
-  m_LocalRotation: {x: 0, y: 0.7071069, z: 0, w: 0.70710677}
+  m_LocalRotation: {x: -1e-45, y: 0.7071069, z: 1e-45, w: 0.70710677}
   m_LocalPosition: {x: 0, y: 8.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1168,6 +1172,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1086240433, guid: 331a5b873b08f674f882240f519d8a72, type: 3}
+      propertyPath: _initialState
+      value: 
+      objectReference: {fileID: 11400000, guid: 56c84cf22193654429f39835b5fb165d, type: 2}
     - target: {fileID: 813202184347896791, guid: 331a5b873b08f674f882240f519d8a72, type: 3}
       propertyPath: m_ConnectedAnchor.x
       value: -0.31994706

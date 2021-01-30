@@ -13,11 +13,11 @@ namespace GGJ2021
 
         protected override void RunBehaviour(AIStateMachine character)
         {
-            AIMotor motor = character.Motor;
-            Vector3 aiPos = motor.transform.position;
+            Vector3 aiPos = character.transform.position;
             Vector3 targetPos = _target.Value.position;
-            Vector3 direction = targetPos - aiPos;
-            character.Motor.Move(direction, motor.WalkSpeed);
+            //Vector3 direction = targetPos - aiPos;
+            character.Motor.SetDestination(targetPos, character.Motor.WalkSpeed);
+            //character.Motor.Move(direction, character.Motor.WalkSpeed);
         }
     }
 }

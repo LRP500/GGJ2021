@@ -22,6 +22,8 @@ namespace GGJ2021
 
         protected override void RunBehaviour(AIStateMachine character)
         {
+            Debug.Log($"Follow Patrol");
+
             AIMotor motor = character.Motor;
 
             if (character.Motor.HasReachedDestination())
