@@ -15,14 +15,14 @@ namespace GGJ2021
 
         private void Update()
         {
-            bool moving = _agent.velocity.magnitude <= 0.1f;
+            bool moving = _agent.velocity.magnitude >= 0.01f;
 
             // Update animator parameter on state changed
             if (!IsMoving && moving)
             {
                 _animator.SetBool("Moving", true);
             }
-            else if (!moving && IsMoving)
+            else if (IsMoving && !moving)
             {
                 _animator.SetBool("Moving", false);
             }
