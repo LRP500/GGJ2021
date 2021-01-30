@@ -11,10 +11,13 @@ namespace GGJ2021
 
         [SerializeField]
         [FormerlySerializedAs("_speed")]
-        private float _walkSpeed = 2f;
+        private float _walkSpeed = 4f;
 
         [SerializeField]
-        private float _runSpeed = 5f;
+        private float _runSpeed = 8f;
+
+        [SerializeField]
+        private float _crouchSpeed = 2f;
 
         [SerializeField]
         private float _gravity = 9.81f;
@@ -23,7 +26,7 @@ namespace GGJ2021
         private float _jumpForce = 8f;
 
         [SerializeField]
-        private Transform _playerBody = null;
+        private Transform _playerBody;
 
         //[SerializeField]
         //private AudioSource _audioSource = null;
@@ -37,19 +40,16 @@ namespace GGJ2021
 
         private void Update()
         {
-            // Get input values
-            float axisX = Input.GetAxis("Horizontal");
-            float axisY = Input.GetAxis("Vertical");
-            bool jumpInput = Input.GetKeyDown(KeyCode.Space);
-
             // Calculate horizontal movement
-            float speed = Input.GetKey(KeyCode.LeftShift) ? _runSpeed : _walkSpeed;
-            Vector3 move = (_playerBody.right * axisX + _playerBody.forward * axisY) * speed;
+            float speed = PlayerInput.Crouch ? _crouchSpeed : PlayerInput.Run ? _runSpeed : _walkSpeed;
+            Vector3 horizontal = _playerBody.right * PlayerInput.HorizontalAxis;
+            Vector3 vertical = _playerBody.forward * PlayerInput.VerticalAxis;
+            Vector3 move = (horizontal + vertical) * speed;
 
             // Apply jump to vertical speed if grounded
             if (_controller.isGrounded)
             {
-                if (jumpInput)
+                if (PlayerInput.Jump)
                 {
                     _verticalSpeed = _jumpForce;
                 }

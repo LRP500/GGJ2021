@@ -6,13 +6,13 @@ namespace GGJ2021
     public class InteractionUI : MonoBehaviour
     {
         [SerializeField]
-        private CanvasGroup _canvasGroup = null;
+        private CanvasGroup _canvasGroup;
 
         [SerializeField]
-        private TextMeshProUGUI _key = null;
+        private TextMeshProUGUI _key;
 
         [SerializeField]
-        private TextMeshProUGUI _label = null;
+        private TextMeshProUGUI _label;
 
         public void SetInteractable(Interactable interactable)
         {
@@ -27,12 +27,12 @@ namespace GGJ2021
             Show();
         }
 
-        public void Hide()
+        private void Hide()
         {
             _canvasGroup.alpha = 0;
         }
 
-        public void Show()
+        private void Show()
         {
             _canvasGroup.alpha = 1;
         }
