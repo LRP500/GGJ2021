@@ -16,6 +16,8 @@ namespace GGJ2021
         public AIMotor Motor => _motor;
         public AISensor Sensor => _sensor;
 
+        private AIState _currentState;
+
         private void Start()
         {
             _initialState.Initialize(this);
