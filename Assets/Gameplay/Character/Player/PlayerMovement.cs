@@ -11,6 +11,9 @@ namespace GGJ2021
         [SerializeField]
         private float _jumpForce = 8f;
 
+        [SerializeField]
+        private CharacterController _controller;
+
         //[SerializeField]
         //private AudioSource _audioSource = null;
 
@@ -28,7 +31,7 @@ namespace GGJ2021
             Vector3 move = horizontal + vertical;
 
             // Apply jump to vertical speed if grounded
-            if (Controller.isGrounded && !PlayerInput.Crouch)
+            if (_controller.isGrounded && !PlayerInput.Crouch)
             {
                 if (PlayerInput.Jump)
                 {
@@ -50,6 +53,12 @@ namespace GGJ2021
                 _isMoving = true;
                 StartCoroutine(FootSteps());
             }
+        }
+
+        public override void Move(Vector3 move, float speed)
+        {
+            _verticalSpeed -= Gravity * Time.deltaTime;
+            _controller.Move(new Vector3(move.x, _verticalSpeed, move.z) * (speed * Time.deltaTime));
         }
 
         private static IEnumerator FootSteps()
