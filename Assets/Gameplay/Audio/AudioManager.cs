@@ -5,16 +5,27 @@ namespace Tools.Audio
     public class AudioManager : MonoBehaviour
     {
         [SerializeField]
-        private SimpleAudioEvent _soundtrack;
-
-        [SerializeField]
         private AudioSource _soundtrackSource;
 
-        private void Awake()
+        [SerializeField]
+        private AudioSource _ambianceSource;
+
+        [SerializeField]
+        private float _musicfadeOutDuration;
+
+        public void PlaySoundtrack()
         {
-            _soundtrackSource.loop = true;
-            _soundtrackSource.spatialBlend = 0;
-            _soundtrack.Play(_soundtrackSource);
+            _ambianceSource.Play();
+        }
+
+        public void StopSoundtrack()
+        {
+            StartCoroutine(AudioUtility.FadeOut(_soundtrackSource, _musicfadeOutDuration));
+        }
+
+        public void PlayAmbiance()
+        {
+            _ambianceSource.Play();
         }
     }
 }

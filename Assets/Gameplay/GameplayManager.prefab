@@ -44,3 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childrenSavedCount: {fileID: 11400000, guid: a886aa1761f009d43988d75feb19f6d2, type: 2}
+  _player: {fileID: 11400000, guid: ab68b9251591c574d8daef55fd1d17f1, type: 2}
+  _audioManager: {fileID: 0}
+  _startingMenu: {fileID: 0}
+  _inGameUI: {fileID: 0}
