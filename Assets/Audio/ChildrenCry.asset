@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b72fd094f19044438bce8a8b894e7b6a, type: 3}
+  m_Name: ChildrenCry
+  m_EditorClassIdentifier: 
+  _clips:
+  - {fileID: 8300000, guid: 64b3c4df0c5a141469f5b9ad727c783d, type: 3}
+  - {fileID: 8300000, guid: 3d9b11793bc06974b90e7477cf844a29, type: 3}
+  - {fileID: 8300000, guid: 452e0eb5cb2ef8042b71abf5b3202a60, type: 3}
+  - {fileID: 8300000, guid: 21a531c51dd70ab4e8a49a1ec3ac5b84, type: 3}
+  - {fileID: 8300000, guid: a60d45fcdd6cf5a48a27c2821eef9d48, type: 3}
+  - {fileID: 8300000, guid: 5a5a7bb614c16f04e9560ce4713937ff, type: 3}
+  _volume: {x: 1, y: 1}
+  _pitch: {x: 0.9, y: 1}
