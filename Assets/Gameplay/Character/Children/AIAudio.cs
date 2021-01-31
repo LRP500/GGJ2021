@@ -21,7 +21,7 @@ namespace GGJ2021
         private float _maxDistance;
 
         [SerializeField]
-        [NaughtyAttributes.MinMaxSlider(5, 20)]
+        [NaughtyAttributes.MinMaxSlider(2, 15)]
         private Vector2 _intervalRange;
 
         [SerializeField]

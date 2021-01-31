@@ -56,7 +56,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bc93f28357343b6bdb5d32b62dc5131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _deathUI: {fileID: 0}
   _player: {fileID: 0}
 --- !u!135 &185195921975551542
 SphereCollider:
@@ -7507,11 +7506,19 @@ PrefabInstance:
       objectReference: {fileID: 7850068267949790910}
     - target: {fileID: 2251615516137928271, guid: 9ff0894d498aeb34eb73c872075852ee, type: 3}
       propertyPath: _maxDistance
-      value: 30
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2251615516137928271, guid: 9ff0894d498aeb34eb73c872075852ee, type: 3}
       propertyPath: _emitOnFollow
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2251615516137928271, guid: 9ff0894d498aeb34eb73c872075852ee, type: 3}
+      propertyPath: _intervalRange.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2251615516137928271, guid: 9ff0894d498aeb34eb73c872075852ee, type: 3}
+      propertyPath: _intervalRange.y
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3730620126420451740, guid: 9ff0894d498aeb34eb73c872075852ee, type: 3}
       propertyPath: m_RootOrder

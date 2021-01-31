@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8428681646782506085}
   - component: {fileID: 2251615516137928271}
   m_Layer: 0
-  m_Name: Character_AudioSource
+  m_Name: CharacterAudio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -144,5 +144,6 @@ MonoBehaviour:
   _cryEvent: {fileID: 11400000, guid: fef9b1eac7eaf3442aadf1afcdfdbb52, type: 2}
   _audioSource: {fileID: 8428681646782506085}
   _player: {fileID: 11400000, guid: ab68b9251591c574d8daef55fd1d17f1, type: 2}
-  _maxDistance: 20
-  _intervalRange: {x: 5, y: 10}
+  _maxDistance: 100
+  _intervalRange: {x: 2, y: 10}
+  _emitOnFollow: 0
