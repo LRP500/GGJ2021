@@ -5,6 +5,8 @@ namespace GGJ2021
 {
     public class Player : Character
     {
+        [SerializeField] private PlayerMouseLook _playerMouseLook;
+        
         [SerializeField]
         private PlayerVariable _runtimeReference;
 
@@ -22,11 +24,13 @@ namespace GGJ2021
         public void Freeze()
         {
             _body.SetActive(false);
+            _playerMouseLook.gameObject.SetActive(false);
         }
 
         public void UnFreeze()
         {
             _body.SetActive(true);
+            _playerMouseLook.gameObject.SetActive(true);
         }
     }
 }
