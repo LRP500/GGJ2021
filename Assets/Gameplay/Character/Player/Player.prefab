@@ -825,6 +825,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 0}
+  _playerMouseLook: {fileID: 1649478241711435001}
   _runtimeReference: {fileID: 11400000, guid: ab68b9251591c574d8daef55fd1d17f1, type: 2}
   _mainCamera: {fileID: 11400000, guid: 15d272968991dbc4ea775cac60a1399a, type: 2}
   _body: {fileID: 391797256}

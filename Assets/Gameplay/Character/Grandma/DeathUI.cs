@@ -48,7 +48,7 @@ namespace GGJ2021
 
                 if (_time > _animDelayText + _animDelayReplay)
                 {
-                    float timeText = _time - _animDelayText + _animDelayReplay;
+                    float timeText = _time - _animDelayText - _animDelayReplay;
                     SetAlpha(timeText * _animDuration, _canvasGroupButton);
                 }
             }
