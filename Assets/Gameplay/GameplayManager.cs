@@ -37,8 +37,7 @@ namespace GGJ2021
         public void StartGame()
         {
             _player.Value.UnFreeze();
-            _audioManager.StopSoundtrack();
-            _audioManager.PlayAmbiance();
+            _audioManager.OnGameStart();
             _childrenSavedCount.Reset();
             _inGameUI.gameObject.SetActive(true);
             _startingMenu.gameObject.SetActive(false);

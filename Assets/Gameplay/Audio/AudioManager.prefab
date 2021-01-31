@@ -47,7 +47,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _soundtrackSource: {fileID: 4130388723348265282}
   _ambianceSource: {fileID: 908857181976788971}
-  _musicfadeOutDuration: 2
+  _musicfadeOutDuration: 1
+  _inGameSources:
+  - {fileID: 0}
 --- !u!1 &4130388723348265280
 GameObject:
   m_ObjectHideFlags: 0

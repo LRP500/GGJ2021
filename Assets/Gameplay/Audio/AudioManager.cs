@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Tools.Audio
@@ -13,9 +14,12 @@ namespace Tools.Audio
         [SerializeField]
         private float _musicfadeOutDuration;
 
+        [SerializeField]
+        private List<AudioSource> _inGameSources;
+
         public void PlaySoundtrack()
         {
-            _ambianceSource.Play();
+            _soundtrackSource.Play();
         }
 
         public void StopSoundtrack()
@@ -26,6 +30,17 @@ namespace Tools.Audio
         public void PlayAmbiance()
         {
             _ambianceSource.Play();
+        }
+
+        public void OnGameStart()
+        {
+            StopSoundtrack();
+            PlayAmbiance();
+
+            foreach (AudioSource source in _inGameSources)
+            {
+                source.Play();
+            }
         }
     }
 }
