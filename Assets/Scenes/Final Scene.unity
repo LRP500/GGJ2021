@@ -325,6 +325,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5076010378969546013, guid: fc6b0537c25ed7746863749055c6b2f8, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.00012207031
+      objectReference: {fileID: 0}
     - target: {fileID: 5076010379182133537, guid: fc6b0537c25ed7746863749055c6b2f8, type: 3}
       propertyPath: m_Name
       value: UICanvas
