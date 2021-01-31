@@ -23,8 +23,6 @@ namespace GGJ2021
             _canvasGroupBackground.alpha = 0;
             _canvasGroupText.alpha = 0;
             _canvasGroupButton.alpha = 0;
-            
-            _gameObject.SetActive(false);
         }
 
         public void OnDeath()
