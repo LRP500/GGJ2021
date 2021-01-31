@@ -19,6 +19,7 @@ namespace GGJ2021
         private void Awake()
         {
             _runtimeReference.SetValue(this);
+            Freeze();
         }
 
         public void Freeze()
