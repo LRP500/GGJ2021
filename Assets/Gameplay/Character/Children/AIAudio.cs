@@ -1,13 +1,12 @@
 using Tools.Audio;
 using UnityEngine;
 using Random = UnityEngine.Random;
-
 namespace GGJ2021
 {
-    public class ChildAudio : MonoBehaviour
+    public class AIAudio : MonoBehaviour
     {
         [SerializeField]
-        private Child _child;
+        private Character _character;
 
         [SerializeField]
         private SimpleAudioEvent _cryEvent;
@@ -25,6 +24,9 @@ namespace GGJ2021
         [NaughtyAttributes.MinMaxSlider(5, 20)]
         private Vector2 _intervalRange;
 
+        [SerializeField]
+        private bool _emitOnFollow = false;
+
         private float _timer;
         private float _interval;
 
@@ -35,6 +37,11 @@ namespace GGJ2021
 
         private void Update()
         {
+            if (_character.Following && !_emitOnFollow)
+            {
+                return;
+            }
+
             if (IsNearPlayer())
             {
                 _timer += Time.deltaTime;
