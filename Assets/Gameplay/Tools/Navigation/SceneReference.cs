@@ -19,11 +19,11 @@ namespace Tools.Navigation
             name = asset.name;
             path = AssetDatabase.GetAssetPath(asset);
         }
-#endif
 
         private void OnValidate()
         {
             Refresh();
         }
+#endif
     }
 }

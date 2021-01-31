@@ -29,7 +29,7 @@ namespace GGJ2021
 
         private void Refresh()
         {
-            _display.text = $"{_childrenSaveCount.Value} Children Saved";
+            _display.text = $"{_childrenSaveCount.Value} / 10 Children Saved";
         }
     }
 }
