@@ -14,6 +14,11 @@ namespace GGJ2021
 
         public override bool Evaluate(AIStateMachine character)
         {
+            if (_target.Value == null)
+            {
+                return false;
+            }
+
             AIMotor motor = character.Motor;
             Vector3 characterPos = motor.transform.position;
             Vector3 targetPos = _target.Value.position;
