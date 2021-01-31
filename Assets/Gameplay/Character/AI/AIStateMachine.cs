@@ -1,3 +1,4 @@
+using System;
 using NaughtyAttributes;
 using UnityEngine;
 
@@ -63,6 +64,11 @@ namespace GGJ2021
             }
 
             StartCoroutine(_currentState.Execute(this));
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            Debug.Log(other.name);
         }
     }
 }
