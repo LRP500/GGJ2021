@@ -13,13 +13,18 @@ namespace GGJ2021
         [SerializeField]
         private Transform _playerHead;
 
-
         private float _rotationX;
 
-        private void Awake()
+        private void OnEnable()
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+        }
+
+        private void OnDisable()
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
 
         private void Update()

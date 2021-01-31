@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Tools.Audio;
 using UnityEngine;
 
 namespace GGJ2021
@@ -14,12 +15,12 @@ namespace GGJ2021
         [SerializeField]
         private CharacterController _controller;
 
-        //[SerializeField]
-        //private AudioSource _audioSource = null;
+        [SerializeField]
+        private AudioSource _audioSource;
 
-        //[SerializeField]
-        //private SimpleAudioEvent _footStepsSFX = null;
-        
+        [SerializeField]
+        private SimpleAudioEvent _footStepsSFX;
+
         private bool _isMoving;
 
         private void Update()
@@ -61,7 +62,7 @@ namespace GGJ2021
             _controller.Move(new Vector3(move.x, _verticalSpeed, move.z) * (speed * Time.deltaTime));
         }
 
-        private static IEnumerator FootSteps()
+        private IEnumerator FootSteps()
         {
             const float interval = 0.6f;
             float timer = 0.5f;
@@ -70,7 +71,7 @@ namespace GGJ2021
             {
                 if (timer >= interval)
                 {
-                    //_footStepsSFX.Play(_audioSource);
+                    _footStepsSFX.Play(_audioSource);
                     timer = 0;
                 }
 
