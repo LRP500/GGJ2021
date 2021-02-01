@@ -136,9 +136,9 @@ MonoBehaviour:
   _body: {fileID: 391797257}
   _walkSpeed: 4
   _runSpeed: 6
-  _gravity: 9.81
-  _crouchSpeed: 2
-  _jumpForce: 3
+  _gravity: 4
+  _crouchSpeed: 1.5
+  _jumpForce: 1.5
   _controller: {fileID: 7656992061013577912}
   _audioSource: {fileID: 8530550062388280517}
   _footStepsSFX: {fileID: 11400000, guid: 1aed8f8492d0e5c4fa516077daa3e4c6, type: 2}
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3f148417a7a5ae4c9efcc6487a606eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sensitivity: 30
+  _sensitivity: 1
   _playerBody: {fileID: 391797257}
   _playerHead: {fileID: 415368359}
 --- !u!114 &6123811670837005954
@@ -827,7 +827,6 @@ MonoBehaviour:
   _animator: {fileID: 0}
   _playerMouseLook: {fileID: 1649478241711435001}
   _runtimeReference: {fileID: 11400000, guid: ab68b9251591c574d8daef55fd1d17f1, type: 2}
-  _mainCamera: {fileID: 11400000, guid: 15d272968991dbc4ea775cac60a1399a, type: 2}
   _body: {fileID: 391797256}
 --- !u!1 &5195293188355878060
 GameObject:

@@ -297,10 +297,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8428681646782506085, guid: 9ff0894d498aeb34eb73c872075852ee, type: 3}
-      propertyPath: MaxDistance
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 8428681646782506085, guid: 9ff0894d498aeb34eb73c872075852ee, type: 3}
       propertyPath: rolloffCustomCurve.m_Curve.Array.size
       value: 3
       objectReference: {fileID: 0}

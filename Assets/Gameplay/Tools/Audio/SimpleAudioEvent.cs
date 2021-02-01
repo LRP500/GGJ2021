@@ -12,7 +12,7 @@ namespace Tools.Audio
         [MinMaxSlider(0, 1)]
         public Vector2 _volume =  Vector2.one;
 
-        [MinMaxSlider(0, 1)]
+        [MinMaxSlider(0, 3)]
         public Vector2 _pitch = Vector2.one;
 
         private AudioSource _previewer;

@@ -30,8 +30,8 @@ namespace GGJ2021
         private void Update()
         {
             // Axis input
-            float mouseX = Input.GetAxis("Mouse X") * _sensitivity * 10 * Time.deltaTime;
-            float mouseY = Input.GetAxis("Mouse Y") * _sensitivity * 10 * Time.deltaTime;
+            float mouseX = Input.GetAxis("Mouse X") * _sensitivity;
+            float mouseY = Input.GetAxis("Mouse Y") * _sensitivity;
 
             // Vertical rotation
             _rotationX -= mouseY;
