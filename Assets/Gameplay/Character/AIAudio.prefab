@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8428681646782506085}
   - component: {fileID: 2251615516137928271}
   m_Layer: 0
-  m_Name: CharacterAudio
+  m_Name: AIAudio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -147,3 +147,4 @@ MonoBehaviour:
   _maxDistance: 100
   _intervalRange: {x: 5, y: 12}
   _emitOnFollow: 0
+  _gameStarted: {fileID: 11400000, guid: 12605dd8a1f0a534a8996d9e717feb1c, type: 2}

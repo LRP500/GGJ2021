@@ -43,8 +43,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e33bce7135e2b994986bc552bea6a171, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _childrenSavedCount: {fileID: 11400000, guid: a886aa1761f009d43988d75feb19f6d2, type: 2}
-  _player: {fileID: 11400000, guid: ab68b9251591c574d8daef55fd1d17f1, type: 2}
+  _cameraManager: {fileID: 0}
   _audioManager: {fileID: 0}
-  _startingMenu: {fileID: 0}
+  _player: {fileID: 11400000, guid: ab68b9251591c574d8daef55fd1d17f1, type: 2}
+  _gameStarted: {fileID: 11400000, guid: 12605dd8a1f0a534a8996d9e717feb1c, type: 2}
+  _startingMenuUI: {fileID: 0}
   _inGameUI: {fileID: 0}
+  _childrenSavedCount: {fileID: 11400000, guid: a886aa1761f009d43988d75feb19f6d2, type: 2}

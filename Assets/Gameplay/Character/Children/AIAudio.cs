@@ -1,4 +1,5 @@
 using Tools.Audio;
+using Tools.Variables;
 using UnityEngine;
 using Random = UnityEngine.Random;
 namespace GGJ2021
@@ -25,7 +26,10 @@ namespace GGJ2021
         private Vector2 _intervalRange;
 
         [SerializeField]
-        private bool _emitOnFollow = false;
+        private bool _emitOnFollow;
+
+        [SerializeField]
+        private BoolVariable _gameStarted;
 
         private float _timer;
         private float _interval;
@@ -37,6 +41,11 @@ namespace GGJ2021
 
         private void Update()
         {
+            if (_gameStarted.Value == false)
+            {
+                return;
+            }
+
             if (_character.Following && !_emitOnFollow)
             {
                 return;

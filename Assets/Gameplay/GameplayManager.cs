@@ -1,25 +1,40 @@
+using System.Collections;
 using Tools.Audio;
 using Tools.Variables;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace GGJ2021
 {
     public class GameplayManager : MonoBehaviour
     {
-        [SerializeField]
-        private IntVariable _childrenSavedCount;
+        [Header("General")]
 
         [SerializeField]
-        private PlayerVariable _player;
+        private CameraManager _cameraManager;
 
         [SerializeField]
         private AudioManager _audioManager;
 
         [SerializeField]
-        private GameObject _startingMenu;
+        private PlayerVariable _player;
+
+        [SerializeField]
+        private BoolVariable _gameStarted;
+
+        [Header("UI")]
+
+        [SerializeField]
+        [FormerlySerializedAs("_startingMenu")]
+        private GameObject _startingMenuUI;
 
         [SerializeField]
         private GameObject _inGameUI;
+
+        [Header("Progress")]
+
+        [SerializeField]
+        private IntVariable _childrenSavedCount;
 
         private void Start()
         {
@@ -30,21 +45,30 @@ namespace GGJ2021
         {
             _player.Value.Freeze();
             _audioManager.PlaySoundtrack();
-            _startingMenu.gameObject.SetActive(true);
+            _startingMenuUI.gameObject.SetActive(true);
             _inGameUI.gameObject.SetActive(false);
+            _cameraManager.SwitchToStartingScreenView();
         }
 
         public void StartGame()
         {
-            _player.Value.UnFreeze();
+            _startingMenuUI.gameObject.SetActive(false);
             _audioManager.OnGameStart();
             _childrenSavedCount.Reset();
-            _inGameUI.gameObject.SetActive(true);
-            _startingMenu.gameObject.SetActive(false);
+            _cameraManager.SwitchToPlayerView();
+            _gameStarted.SetValue(true);
+
+            StartCoroutine(EnablePlayer());
         }
 
-        public void Restart()
+        /// <summary>
+        /// Waits for camera blend and unfreezes player.
+        /// </summary>
+        private IEnumerator EnablePlayer()
         {
+            yield return new WaitForSeconds(2);
+            _inGameUI.gameObject.SetActive(true);
+            _player.Value.UnFreeze();
         }
     }
 }

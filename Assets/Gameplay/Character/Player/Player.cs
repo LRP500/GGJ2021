@@ -1,17 +1,20 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace GGJ2021
 {
     public class Player : Character
     {
         [SerializeField]
-        private PlayerMouseLook _playerMouseLook;
-        
-        [SerializeField]
-        private PlayerVariable _runtimeReference;
+        [FormerlySerializedAs("_playerMouseLook")]
+        private PlayerMouseLook _mouseLook;
 
         [SerializeField]
-        private GameObject _body;
+        [FormerlySerializedAs("_playerMovement")]
+        private PlayerMovement _movement;
+
+        [SerializeField]
+        private PlayerVariable _runtimeReference;
 
         private void Awake()
         {
@@ -20,14 +23,14 @@ namespace GGJ2021
 
         public void Freeze()
         {
-            _body.SetActive(false);
-            _playerMouseLook.enabled = false;
+            _movement.enabled = false;
+            _mouseLook.enabled = false;
         }
 
         public void UnFreeze()
         {
-            _body.SetActive(true);
-            _playerMouseLook.enabled = true;
+            _movement.enabled = true;
+            _mouseLook.enabled = true;
         }
     }
 }
