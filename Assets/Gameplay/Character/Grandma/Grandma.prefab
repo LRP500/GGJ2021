@@ -56,6 +56,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bc93f28357343b6bdb5d32b62dc5131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _deathUI: {fileID: 0}
   _player: {fileID: 0}
 --- !u!135 &185195921975551542
 SphereCollider:
@@ -141,8 +142,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _body: {fileID: 5714492464220181506}
-  _walkSpeed: 2
-  _runSpeed: 2
+  _walkSpeed: 5
+  _runSpeed: 5
   _gravity: 9.81
   _agent: {fileID: 7871873622079480503}
   _animator: {fileID: 4821801920971117058}

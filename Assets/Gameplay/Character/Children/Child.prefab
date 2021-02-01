@@ -71,8 +71,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _body: {fileID: 5714492464220181506}
-  _walkSpeed: 3.5
-  _runSpeed: 3.5
+  _walkSpeed: 4
+  _runSpeed: 4
   _gravity: 9.81
   _agent: {fileID: 7871873622079480503}
   _animator: {fileID: 3076060622406416711}
