@@ -1,5 +1,6 @@
-using System;
+using System.Collections;
 using NaughtyAttributes;
+using Tools.Variables;
 using UnityEngine;
 
 namespace GGJ2021
@@ -14,6 +15,9 @@ namespace GGJ2021
 
         public AIMotor Motor => _motor;
         public Animator Animator => _animator;
+
+        [SerializeField]
+        private BoolVariable _gameStarted;
 
         /// <summary>
         /// Starting state.
@@ -43,11 +47,11 @@ namespace GGJ2021
         {
             if (_autoStart)
             {
-                Run();
+                StartCoroutine(RunOnGameStart());
             }
         }
 
-        public void Run()
+        private void Run()
         {
             RunState(_initialState);
         }
@@ -66,9 +70,10 @@ namespace GGJ2021
             StartCoroutine(_currentState.Execute(this));
         }
 
-        private void OnTriggerEnter(Collider other)
+        public IEnumerator RunOnGameStart()
         {
-            Debug.Log(other.name);
+            yield return new WaitUntil(() => _gameStarted.Value);
+            Run();
         }
     }
 }

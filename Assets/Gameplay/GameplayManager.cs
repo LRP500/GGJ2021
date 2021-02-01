@@ -44,18 +44,19 @@ namespace GGJ2021
         private void Initialize()
         {
             _player.Value.Freeze();
+            _gameStarted.SetValue(false);
             _audioManager.PlaySoundtrack();
-            _startingMenuUI.gameObject.SetActive(true);
             _inGameUI.gameObject.SetActive(false);
+            _startingMenuUI.gameObject.SetActive(true);
             _cameraManager.SwitchToStartingScreenView();
         }
 
         public void StartGame()
         {
             _startingMenuUI.gameObject.SetActive(false);
+            _cameraManager.SwitchToPlayerView();
             _audioManager.OnGameStart();
             _childrenSavedCount.Reset();
-            _cameraManager.SwitchToPlayerView();
             _gameStarted.SetValue(true);
 
             StartCoroutine(EnablePlayer());

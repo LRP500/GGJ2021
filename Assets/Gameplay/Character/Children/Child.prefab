@@ -166,6 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _motor: {fileID: 8799254035035961778}
   _animator: {fileID: 3076060622406416711}
+  _gameStarted: {fileID: 11400000, guid: 12605dd8a1f0a534a8996d9e717feb1c, type: 2}
   _initialState: {fileID: 11400000, guid: a1ac069aae718da4fbce021acd575213, type: 2}
   _currentState: {fileID: 0}
   _previousState: {fileID: 0}
