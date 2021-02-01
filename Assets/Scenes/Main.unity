@@ -330,6 +330,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2050091823, guid: fc6b0537c25ed7746863749055c6b2f8, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 679905894265244076, guid: fc6b0537c25ed7746863749055c6b2f8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -420,6 +424,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5076010379182133541, guid: fc6b0537c25ed7746863749055c6b2f8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6437963690609939171, guid: fc6b0537c25ed7746863749055c6b2f8, type: 3}
+      propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2427,6 +2435,14 @@ PrefabInstance:
     - target: {fileID: 1602314712211441187, guid: 5615d0b569515214db389bae83bec1de, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903197479435686879, guid: 5615d0b569515214db389bae83bec1de, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.171
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903197479556710553, guid: 5615d0b569515214db389bae83bec1de, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5615d0b569515214db389bae83bec1de, type: 3}
