@@ -1,4 +1,5 @@
 using System.Collections;
+using NaughtyAttributes;
 using Tools.Audio;
 using Tools.Variables;
 using UnityEngine;
@@ -22,6 +23,12 @@ namespace GGJ2021
         [SerializeField]
         private BoolVariable _gameStarted;
 
+        [SerializeField]
+        private BoolVariable _playerVictory;
+
+        [SerializeField]
+        private BoolVariable _playerDeath;
+
         [Header("UI")]
 
         [SerializeField]
@@ -33,8 +40,14 @@ namespace GGJ2021
 
         [Header("Progress")]
 
+        [Tag]
+        [SerializeField]
+        private string _childrenTag;
+
         [SerializeField]
         private IntVariable _childrenSavedCount;
+
+        private int _childrenCount;
 
         private void Start()
         {
@@ -43,12 +56,18 @@ namespace GGJ2021
 
         private void Initialize()
         {
-            _player.Value.Freeze();
             _gameStarted.SetValue(false);
+            _playerDeath.SetValue(false);
+            _playerVictory.SetValue(false);
+
+            _player.Value.Freeze();
             _audioManager.PlaySoundtrack();
             _inGameUI.gameObject.SetActive(false);
             _startingMenuUI.gameObject.SetActive(true);
             _cameraManager.SwitchToStartingScreenView();
+
+            _childrenSavedCount.Reset();
+            _childrenCount = GameObject.FindGameObjectsWithTag(_childrenTag).Length;
         }
 
         public void StartGame()
@@ -56,7 +75,6 @@ namespace GGJ2021
             _startingMenuUI.gameObject.SetActive(false);
             _cameraManager.SwitchToPlayerView();
             _audioManager.OnGameStart();
-            _childrenSavedCount.Reset();
             _gameStarted.SetValue(true);
 
             StartCoroutine(EnablePlayer());
@@ -68,8 +86,23 @@ namespace GGJ2021
         private IEnumerator EnablePlayer()
         {
             yield return new WaitForSeconds(2);
+
             _inGameUI.gameObject.SetActive(true);
             _player.Value.UnFreeze();
+        }
+
+        private void Update()
+        {
+            if (CheckForVictory())
+            {
+                _player.Value.Freeze();
+                _playerVictory.SetValue(true);
+            }
+        }
+
+        private bool CheckForVictory()
+        {
+            return _childrenSavedCount.Value == _childrenCount;
         }
     }
 }
