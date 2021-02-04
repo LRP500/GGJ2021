@@ -36,7 +36,7 @@ namespace GGJ2021
         private GameObject _startingMenuUI;
 
         [SerializeField]
-        private GameObject _inGameUI;
+        private InGameUI _inGameUI;
 
         [Header("Progress")]
 
@@ -73,6 +73,7 @@ namespace GGJ2021
         public void StartGame()
         {
             _startingMenuUI.gameObject.SetActive(false);
+            _inGameUI.Initialize(_childrenCount);
             _cameraManager.SwitchToPlayerView();
             _audioManager.OnGameStart();
             _gameStarted.SetValue(true);
