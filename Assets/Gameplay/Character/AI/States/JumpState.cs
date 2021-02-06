@@ -16,20 +16,20 @@ namespace GGJ2021
         private Vector3 _endMovement;
         private Vector3 _startMovement;
         
-        protected override void OnEnterState()
+        protected override void OnEnterState(AIStateMachine character)
         {
-            Character.GetComponent<Character>().SetFollowing(true);
+            character.GetComponent<Character>().SetFollowing(true);
 
-            _startMovement = Character.Motor.transform.position;
+            _startMovement = character.Motor.transform.position;
             _endMovement = FindEndMovement(_startMovement, _target.Value.position);
         }
 
-        protected override void OnExitState()
+        protected override void OnExitState(AIStateMachine character)
         {
-            Character.GetComponent<Character>().SetFollowing(false);
+            character.GetComponent<Character>().SetFollowing(false);
         }
 
-        protected override void RunBehaviour()
+        protected override void RunBehaviour(AIStateMachine character)
         {
         }
         

@@ -18,18 +18,18 @@ namespace GGJ2021
         [SerializeField]
         private AIPatrolPath _path;
 
-        protected override void RunBehaviour()
+        protected override void RunBehaviour(AIStateMachine character)
         {
-            AIMotor motor = Character.Motor;
+            AIMotor motor = character.Motor;
 
-            if (Character.Motor.HasReachedDestination())
+            if (character.Motor.HasReachedDestination())
             {
                 Transform nextWaypoint = _mode switch
                 {
                     PathMode.Ordered => _path.GetNextWaypoint(),
                     PathMode.Closest => _path.GetClosest(motor.transform.position),
                     PathMode.Random => _path.GetRandom(),
-                    _ => Character.transform
+                    _ => character.transform
                 };
 
                 if (nextWaypoint != null)

@@ -1,4 +1,5 @@
 using Tools;
+using Tools.Audio;
 using Tools.Variables;
 using UnityEngine;
 
@@ -13,12 +14,16 @@ namespace GGJ2021
         [SerializeField]
         private IntVariable _childrenSavedCount;
 
+        [SerializeField]
+        private AudioEventPlayer _chidrenCheer;
+
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag(_childrenTag))
             {
-                Destroy(other.transform.parent.gameObject);
+                _chidrenCheer.Play();
                 _childrenSavedCount.Increment();
+                other.GetComponentInParent<Child>().Save();
             }
         }
     }

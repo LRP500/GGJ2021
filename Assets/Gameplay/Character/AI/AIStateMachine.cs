@@ -69,7 +69,7 @@ namespace GGJ2021
                 _currentState.EnterState(this);
             }
 
-            StartCoroutine(_currentState.Execute());
+            StartCoroutine(_currentState.Execute(this));
         }
 
         private IEnumerator RunOnGameStart()

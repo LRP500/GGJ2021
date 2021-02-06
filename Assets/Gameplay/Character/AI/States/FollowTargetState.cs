@@ -7,23 +7,21 @@ namespace GGJ2021
     public class FollowTargetState : AIState
     {
         [SerializeField]
-        private TransformVariable _target;
+        protected TransformVariable _target;
 
-        protected virtual float Speed => Character.Motor.WalkSpeed;
-
-        protected override void OnEnterState()
+        protected override void OnEnterState(AIStateMachine character)
         {
-            Character.GetComponent<Character>().SetFollowing(true);
+            character.GetComponent<Character>().SetFollowing(true);
         }
 
-        protected override void OnExitState()
+        protected override void OnExitState(AIStateMachine character)
         {
-            Character.GetComponent<Character>().SetFollowing(false);
+            character.GetComponent<Character>().SetFollowing(false);
         }
 
-        protected override void RunBehaviour()
+        protected override void RunBehaviour(AIStateMachine character)
         {
-            Character.Motor.SetDestination(_target.Value.position, Speed);
+            character.Motor.SetDestination(_target.Value.position, character.Motor.WalkSpeed);
         }
     }
 }

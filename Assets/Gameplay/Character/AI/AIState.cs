@@ -33,40 +33,37 @@ namespace GGJ2021
         [SerializeField]
         private List<Outcome> _outcomes;
 
-        protected AIStateMachine Character { get; private set; }
-
         public void EnterState(AIStateMachine character)
         {
-            Character = character;
-            OnEnterState();
+            OnEnterState(character);
         }
 
         public void ExitState(AIStateMachine character)
         {
-            OnExitState();
+            OnExitState(character);
         }
 
-        protected virtual void OnEnterState() { }
-        protected virtual void OnExitState() { }
+        protected virtual void OnEnterState(AIStateMachine character) { }
+        protected virtual void OnExitState(AIStateMachine character) { }
 
-        protected abstract void RunBehaviour();
+        protected abstract void RunBehaviour(AIStateMachine character);
         
-        public IEnumerator Execute()
+        public IEnumerator Execute(AIStateMachine character)
         {
-            RunBehaviour();
+            RunBehaviour(character);
 
             yield return new WaitForEndOfFrame();
 
             for (int i = 0; i < _outcomes.Count; i++)
             {
-                AIState outcome = _outcomes[i].Execute(Character);
+                AIState outcome = _outcomes[i].Execute(character);
                 if (outcome != null)
                 {
-                    Character.RunState(outcome);
+                    character.RunState(outcome);
                 }
             }
 
-            Character.RunState(Character.CurrentState);
+            character.RunState(character.CurrentState);
         }
     }
 }
