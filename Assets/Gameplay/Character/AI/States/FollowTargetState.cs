@@ -9,19 +9,21 @@ namespace GGJ2021
         [SerializeField]
         private TransformVariable _target;
 
-        public override void EnterState(AIStateMachine character)
+        protected virtual float Speed => Character.Motor.WalkSpeed;
+
+        protected override void OnEnterState()
         {
-            character.GetComponent<Character>().SetFollowing(true);
+            Character.GetComponent<Character>().SetFollowing(true);
         }
 
-        public override void ExitState(AIStateMachine character)
+        protected override void OnExitState()
         {
-            character.GetComponent<Character>().SetFollowing(false);
+            Character.GetComponent<Character>().SetFollowing(false);
         }
 
-        protected override void RunBehaviour(AIStateMachine character)
+        protected override void RunBehaviour()
         {
-            character.Motor.SetDestination(_target.Value.position, character.Motor.WalkSpeed);
+            Character.Motor.SetDestination(_target.Value.position, Speed);
         }
     }
 }

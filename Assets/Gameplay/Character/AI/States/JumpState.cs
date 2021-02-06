@@ -16,25 +16,21 @@ namespace GGJ2021
         private Vector3 _endMovement;
         private Vector3 _startMovement;
         
-        public override void EnterState(AIStateMachine character)
+        protected override void OnEnterState()
         {
-            // todo : set jump animation ? 
-            character.GetComponent<Character>().SetFollowing(true);
+            Character.GetComponent<Character>().SetFollowing(true);
 
-            _startMovement = character.Motor.transform.position;
+            _startMovement = Character.Motor.transform.position;
             _endMovement = FindEndMovement(_startMovement, _target.Value.position);
-            
-            
         }
 
-        public override void ExitState(AIStateMachine character)
+        protected override void OnExitState()
         {
-            character.GetComponent<Character>().SetFollowing(false);
+            Character.GetComponent<Character>().SetFollowing(false);
         }
 
-        protected override void RunBehaviour(AIStateMachine character)
+        protected override void RunBehaviour()
         {
-            
         }
         
         Vector3 FindEndMovement(Vector3 start, Vector3 target)

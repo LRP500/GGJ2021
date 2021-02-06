@@ -38,10 +38,12 @@ namespace GGJ2021
         /// </summary>
         [ReadOnly]
         [SerializeField]
-        private AIState _previousState = null;
+        private AIState _previousState;
 
         [SerializeField]
         private bool _autoStart = true;
+
+        public AIState CurrentState => _currentState;
 
         private void Start()
         {
@@ -67,10 +69,10 @@ namespace GGJ2021
                 _currentState.EnterState(this);
             }
 
-            StartCoroutine(_currentState.Execute(this));
+            StartCoroutine(_currentState.Execute());
         }
 
-        public IEnumerator RunOnGameStart()
+        private IEnumerator RunOnGameStart()
         {
             yield return new WaitUntil(() => _gameStarted.Value);
             Run();

@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39aacea25cc9d0440ab25303de65eab2, type: 3}
   m_Name: Grandma_FollowPlayer
   m_EditorClassIdentifier: 
-  _endCondition: {fileID: 11400000, guid: 449d54e0d820e1b43bc24e13a6d65f74, type: 2}
-  _trueState: {fileID: 11400000}
-  _falseState: {fileID: 11400000, guid: 56c84cf22193654429f39835b5fb165d, type: 2}
+  _outcomes:
+  - condition: {fileID: 11400000, guid: 449d54e0d820e1b43bc24e13a6d65f74, type: 2}
+    trueState: {fileID: 0}
+    falseState: {fileID: 11400000, guid: 56c84cf22193654429f39835b5fb165d, type: 2}
+  - condition: {fileID: 11400000, guid: 6627c09075cf3ea49ab28a0c62c22faf, type: 2}
+    trueState: {fileID: 11400000, guid: 9c5c829e07832484c9fc997dbff8c9e4, type: 2}
+    falseState: {fileID: 0}
   _target: {fileID: 11400000, guid: 5b3bffd4de932d449b0e6b08d1b9dae5, type: 2}

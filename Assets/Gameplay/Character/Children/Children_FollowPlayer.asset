@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39aacea25cc9d0440ab25303de65eab2, type: 3}
   m_Name: Children_FollowPlayer
   m_EditorClassIdentifier: 
-  _endCondition: {fileID: 11400000, guid: 0129e51c5ede3264f9741ee662c30d07, type: 2}
-  _trueState: {fileID: 11400000}
-  _falseState: {fileID: 11400000, guid: a1ac069aae718da4fbce021acd575213, type: 2}
+  _outcomes:
+  - condition: {fileID: 11400000, guid: 0129e51c5ede3264f9741ee662c30d07, type: 2}
+    trueState: {fileID: 0}
+    falseState: {fileID: 11400000, guid: a1ac069aae718da4fbce021acd575213, type: 2}
   _target: {fileID: 11400000, guid: 5b3bffd4de932d449b0e6b08d1b9dae5, type: 2}

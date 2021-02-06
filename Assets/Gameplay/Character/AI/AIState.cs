@@ -1,35 +1,72 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace GGJ2021
 {
     public abstract class AIState : ScriptableObject
     {
-        [SerializeField]
-        private AICondition _endCondition;
+        #region Nested Types
 
-        [SerializeField]
-        private AIState _trueState;
-
-        [SerializeField]
-        private AIState _falseState;
-
-        public abstract void EnterState(AIStateMachine character);
-        public abstract void ExitState(AIStateMachine character);
-
-        protected abstract void RunBehaviour(AIStateMachine character);
-        
-        public IEnumerator Execute(AIStateMachine controller)
+        [System.Serializable]
+        private struct Outcome
         {
-            RunBehaviour(controller);
+            public AICondition condition;
+            public AIState trueState;
+            public AIState falseState;
+
+            public AIState Execute(AIStateMachine character)
+            {
+                bool evaluation = condition.Evaluate(character);
+
+                return evaluation switch
+                {
+                    true when trueState => trueState,
+                    false when falseState => falseState,
+                    _ => null
+                };
+            }
+        }
+
+        #endregion Nested Types
+
+        [SerializeField]
+        private List<Outcome> _outcomes;
+
+        protected AIStateMachine Character { get; private set; }
+
+        public void EnterState(AIStateMachine character)
+        {
+            Character = character;
+            OnEnterState();
+        }
+
+        public void ExitState(AIStateMachine character)
+        {
+            OnExitState();
+        }
+
+        protected virtual void OnEnterState() { }
+        protected virtual void OnExitState() { }
+
+        protected abstract void RunBehaviour();
+        
+        public IEnumerator Execute()
+        {
+            RunBehaviour();
 
             yield return new WaitForEndOfFrame();
 
-            if (_endCondition)
+            for (int i = 0; i < _outcomes.Count; i++)
             {
-                bool evaluation = _endCondition.Evaluate(controller);
-                controller.RunState(evaluation ? _trueState : _falseState);
+                AIState outcome = _outcomes[i].Execute(Character);
+                if (outcome != null)
+                {
+                    Character.RunState(outcome);
+                }
             }
+
+            Character.RunState(Character.CurrentState);
         }
     }
 }

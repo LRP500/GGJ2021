@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ade5a1fc140f3b4191f08897a1bd846, type: 3}
   m_Name: Grandma_PatrolState
   m_EditorClassIdentifier: 
-  _endCondition: {fileID: 11400000, guid: 449d54e0d820e1b43bc24e13a6d65f74, type: 2}
-  _trueState: {fileID: 11400000, guid: da2074ad5c515414aa46a909051c0822, type: 2}
-  _falseState: {fileID: 11400000}
+  _outcomes:
+  - condition: {fileID: 11400000, guid: 449d54e0d820e1b43bc24e13a6d65f74, type: 2}
+    trueState: {fileID: 11400000, guid: da2074ad5c515414aa46a909051c0822, type: 2}
+    falseState: {fileID: 0}
   _mode: 0
   _path: {fileID: 11400000, guid: 76c9f8bca10974143b27212f2f21d009, type: 2}

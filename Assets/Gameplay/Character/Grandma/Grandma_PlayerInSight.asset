@@ -9,8 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73e406b898f90a84baba9c357dc59a2e, type: 3}
-  m_Name: Grandma_NearPlayer
+  m_Script: {fileID: 11500000, guid: 7b1ce2694209d874889a6f7701d03224, type: 3}
+  m_Name: Grandma_PlayerInSight
   m_EditorClassIdentifier: 
+  _sightDistance: 15
+  _sphereCastRadius: 4
   _target: {fileID: 11400000, guid: 5b3bffd4de932d449b0e6b08d1b9dae5, type: 2}
-  _maxDistance: 75
+  _targetLayer:
+    serializedVersion: 2
+    m_Bits: 128
